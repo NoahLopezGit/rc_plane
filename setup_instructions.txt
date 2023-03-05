@@ -1,2 +1,5 @@
 make RF24 library
     while in RF24 and desired computer run "Make" command
+sudo make install - adds RF24 headers and libraries to /usr/local/lib and /usr/local/include/RF24
+    I believe this step makes the library avaialable globally to the compiler
+    to include RF24 library you would write #include <RF24/RF24.h>
