@@ -1,5 +1,13 @@
 make RF24 library
+    get RF24 from github repo
     while in RF24 and desired computer run "Make" command
-sudo make install - adds RF24 headers and libraries to /usr/local/lib and /usr/local/include/RF24
+    sudo make install - adds RF24 headers and libraries to /usr/local/lib and /usr/local/include/RF24
     I believe this step makes the library avaialable globally to the compiler
-    to include RF24 library you would write #include <RF24/RF24.h>
+        to expand on this, the rf24 library becomes available as a shared library under the name librf24.so.<software version> (where software version is replace by some series of 1.2.3)
+        
+compiling program
+    to use the shared library in your program you must first include it in your source code (#include <RF24/RF24.h>)
+    then you must compile the source code to an object file (-c flag is used to tell g++ to only compile to object file and not executable)
+        g++ -c program.cpp -o program.o 
+    then you must link compile this object file to an executable while linking the shared library (-L. flag to link shared library, denoted as librf24 or -lrf24)
+        g++ program.o -o program -L. -lrf24
