@@ -1,0 +1,2 @@
+make RF24 library
+    while in RF24 and desired computer run "Make" command
